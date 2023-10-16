@@ -1,39 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
+import Register from "./components/Register";
+// import Login from "./components/Login";
+// import Header from "./components/Header";
+// import Table from "./components/Table";
+import { UserContext } from "./context/UserContext";
 
 const App = () => {
-
   const [message, setMessage] = useState("");
+  const [token] = useContext(UserContext);
 
   const getWelcomeMessage = async () => {
     const requestOptions = {
-      method : "GET",
-      headers : {
-        "Content-type" : "application/json"
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
     };
     const response = await fetch("/api", requestOptions);
     const data = await response.json();
 
-    if(!response.ok) {
-      console.log("Something messed up");
+    if (!response.ok) {
+      console.log("something messed up");
+    } else {
+      setMessage(data.message);
     }
-    else{
-      setMessage(data.message)
-      console.log(data);
-    }
-
-  }
+  };
 
   useEffect(() => {
     getWelcomeMessage();
   }, []);
-  
+
   return (
-    <div>
-      <h1>{message}</h1>
-    </div>
+    <>
+      Hello {message}
+
+      <Register />
+
+    </>
   );
-}
+};
 
 export default App;
