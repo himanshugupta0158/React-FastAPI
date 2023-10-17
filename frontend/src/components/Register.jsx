@@ -4,24 +4,17 @@ import { UserContext } from "../context/UserContext";
 import ErrorMessage from "./ErrorMessage";
 
 const Register = () => {
-  const { email, setEmail } = useState("");
-  const { password, setPassword } = useState("");
-  const { confirmationPassword, setConfirmationPassword } = useState("");
-  const { errorMessage, setErrorMessage } = useState("");
-
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmationPassword, setConfirmationPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [, setToken] = useContext(UserContext);
 
   const submitRegistration = async () => {
     const requestOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        hashed_password: password,
-      }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: email, hashed_password: password }),
     };
 
     const response = await fetch("/api/users", requestOptions);
@@ -36,12 +29,11 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (password === confirmationPassword && password.length > 5) {
       submitRegistration();
     } else {
       setErrorMessage(
-        "Ensure thatt the password match and greater than 5 characters"
+        "Ensure that the passwords match and greater than 5 characters"
       );
     }
   };
@@ -68,7 +60,7 @@ const Register = () => {
           <div className="control">
             <input
               type="password"
-              placeholder="Enter Password"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="input"
@@ -81,7 +73,7 @@ const Register = () => {
           <div className="control">
             <input
               type="password"
-              placeholder="Confirm Password"
+              placeholder="Enter password"
               value={confirmationPassword}
               onChange={(e) => setConfirmationPassword(e.target.value)}
               className="input"
