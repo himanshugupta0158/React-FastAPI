@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Header from "./components/Header";
-// import Table from "./components/Table";
+import Table from "./components/Table";
 import { UserContext } from "./context/UserContext";
 
 const App = () => {
@@ -44,9 +44,7 @@ const App = () => {
                 <Register /> <Login />
               </div>
             ) : (
-              <p>
-                Table
-              </p>
+              <Table />
             )
           }
         </div>
