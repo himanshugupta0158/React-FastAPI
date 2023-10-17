@@ -1,7 +1,7 @@
-<hr>
 # Getting Started with Create FastAPIs (Backend Part)
 
-We have used FastAPI , SQLAlchemy, Pyjwt and passlib python libraries for backend work
+- We have used FastAPI , SQLAlchemy, Pyjwt and passlib python libraries for backend work.
+- Only After backend API started successfully , you should go for frontend side settings.
 
 
 ### `pip install virtualenv` to install python virtual environment.
