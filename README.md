@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+<hr>
+# Getting Started with Create FastAPIs (Backend Part)
+
+We have used FastAPI , SQLAlchemy, Pyjwt and passlib python libraries for backend work
+
+
+### `pip install virtualenv` to install python virtual environment.
+### `python -m venv <virtual-environment-name>` to create python virtual environment after installing itusing pip
+### `pip install -r requirements.txt` to install all the required python library for backend work
+### Open a new shell in backend directory and run `python` command in it.
+### After that import `import services as srvc` module there
+### then run `srvc.create_database()` this will create a database in the backend directory
+### Now, Run fastAPI server using ` uvicorn main:app --reload` this command.
+### go to `http://127.0.0.1:8000/docs` to look into all existing APIs of fastAPI backend.
+
+
+<hr>
+
+
+# Getting Started with Create React App (FrontEnd Part)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +87,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<hr>
